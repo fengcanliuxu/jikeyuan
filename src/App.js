@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom'
 import Home from './pages/Layout'
 import Login from './pages/Login'
 function App() {
@@ -9,6 +14,7 @@ function App() {
         <Link to="./home">首页</Link> */}
       </div>
       <Switch>
+        <Redirect exact from="/" to="/login"></Redirect>
         <Route path="/home" component={Home}></Route>
         <Route path="/login" component={Login}></Route>
       </Switch>
